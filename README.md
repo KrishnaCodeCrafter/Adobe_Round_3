@@ -94,6 +94,7 @@ You can run this project either locally for development or using the provided Do
 4.  Access the application in your browser at `http://localhost:3000`.
 
 ## Screenshot
+<img width="1913" height="863" alt="image" src="https://github.com/user-attachments/assets/0b285953-abb5-44c4-9eda-bab624f299df" />
 
 ## How It Works
 
