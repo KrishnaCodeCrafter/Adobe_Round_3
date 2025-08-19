@@ -6,7 +6,7 @@ This project is an intelligent web application designed to analyze a collection 
 
 *The application interface in light mode, showcasing the three-panel layout.*
 
-## ✨ Features
+## Features
 
 * **Persona-Driven Analysis**: Simply define a user persona (e.g., "Travel Planner") and a "job-to-be-done" (e.g., "find family-friendly activities"). The engine will read through all documents and rank sections based on their relevance to your specific needs.
 * **Hybrid Relevance Scoring**: Combines traditional keyword matching with advanced semantic similarity (using `sentence-transformers`) to understand the context and meaning behind the text, ensuring highly accurate results.
@@ -19,7 +19,7 @@ This project is an intelligent web application designed to analyze a collection 
 
 *The application interface in dark mode.*
 
-## 🏛️ Architecture
+## Architecture
 
 The application is built with a modern full-stack architecture, separating the frontend and backend for scalability and maintainability.
 
@@ -28,7 +28,7 @@ The application is built with a modern full-stack architecture, separating the f
 * **PDF Rendering**: Powered by the **Adobe PDF Embed API** for a robust and feature-rich document viewing experience.
 * **Containerization**: The entire application is containerized using **Docker**, ensuring a consistent and easy-to-deploy environment.
 
-## 🚀 Getting Started
+## Getting Started
 
 You can run this project either locally for development or using the provided Docker container for a production-like setup.
 
@@ -93,9 +93,9 @@ You can run this project either locally for development or using the provided Do
     ```
 4.  Access the application in your browser at `http://localhost:3000`.
 
-## 📸 Screenshot
+## Screenshot
 
-## 🧠 How It Works
+## How It Works
 
 ### Persona-Driven Ranking
 
