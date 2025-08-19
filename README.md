@@ -6,6 +6,9 @@ This project is an intelligent web application designed to analyze a collection 
 
 *The application interface in light mode, showcasing the three-panel layout.*
 
+## Screenshot
+<img width="1913" height="863" alt="image" src="https://github.com/user-attachments/assets/0b285953-abb5-44c4-9eda-bab624f299df" />
+
 ## Features
 
 * **Persona-Driven Analysis**: Simply define a user persona (e.g., "Travel Planner") and a "job-to-be-done" (e.g., "find family-friendly activities"). The engine will read through all documents and rank sections based on their relevance to your specific needs.
@@ -18,15 +21,6 @@ This project is an intelligent web application designed to analyze a collection 
 * **Light & Dark Mode**: A sleek, modern interface with a user-toggleable dark mode for comfortable reading in any environment.
 
 *The application interface in dark mode.*
-
-## Architecture
-
-The application is built with a modern full-stack architecture, separating the frontend and backend for scalability and maintainability.
-
-* **Frontend**: A responsive web application built with **React.js**, providing a dynamic and interactive user experience.
-* **Backend**: A powerful API built with **Python** and the **Flask** web framework. It handles all the heavy lifting, including PDF parsing, text analysis, and relevance scoring.
-* **PDF Rendering**: Powered by the **Adobe PDF Embed API** for a robust and feature-rich document viewing experience.
-* **Containerization**: The entire application is containerized using **Docker**, ensuring a consistent and easy-to-deploy environment.
 
 ## Getting Started
 
@@ -93,8 +87,6 @@ You can run this project either locally for development or using the provided Do
     ```
 4.  Access the application in your browser at `http://localhost:3000`.
 
-## Screenshot
-<img width="1913" height="863" alt="image" src="https://github.com/user-attachments/assets/0b285953-abb5-44c4-9eda-bab624f299df" />
 
 ## How It Works
 
