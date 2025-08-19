@@ -72,19 +72,6 @@ You can run this project either locally for development or using the provided Do
     ```
     Your browser will automatically open to `http://localhost:3000`.
 
-### 2. Docker Setup
-
-1.  **Important:** Add your Adobe API key to `frontend/src/components/DocumentViewer.js`.
-2.  From the project's root directory, build the Docker image:
-    ```bash
-    docker build -t adobe-hackathon-solution .
-    ```
-3.  Run the Docker container:
-    ```bash
-    docker run -p 3000:80 -p 5000:5000 -v $(pwd)/uploads:/app/uploads -v $(pwd)/output:/app/output adobe-hackathon-solution
-    ```
-4.  Access the application in your browser at `http://localhost:3000`.
-
 
 ## How It Works
 
