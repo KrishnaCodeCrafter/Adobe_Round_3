@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 
 // IMPORTANT: Replace with your actual Adobe PDF Embed API Client ID
-const ADOBE_CLIENT_ID = "f5cec958cf9443fd82c9208c13312c06";
+const ADOBE_CLIENT_ID = "YOUR_ADOBE_CLIENT_ID_HERE";
 
 const DocumentViewer = forwardRef(({ activeDoc }, ref) => {
     const viewerRef = useRef(null);
