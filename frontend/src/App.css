@@ -1,0 +1,207 @@
+/* --- Global Styles & Color Variables --- */
+:root {
+    --primary-color: #0078d4;
+    --secondary-color-light: #2c3e50;
+    --secondary-color-dark: #e1e4e8;
+    
+    /* Light Mode Palette */
+    --background-color: #f5f7fa;
+    --surface-color: #ffffff;
+    --text-color: #333;
+    --subtle-text-color: #6c757d;
+    --border-color: #e1e4e8;
+    --accent-color-light: #e6f2ff;
+    --header-bg: var(--secondary-color-light);
+    --keyword-bg: #eef0f2;
+    --hover-bg: #f8f9fa;
+    --shadow-color: rgba(0,0,0,0.08);
+}
+
+body.dark-mode {
+    /* Dark Mode Palette */
+    --background-color: #121212;
+    --surface-color: #1e1e1e;
+    --text-color: #e1e4e8;
+    --subtle-text-color: #8b949e;
+    --border-color: #30363d;
+    --accent-color-light: #223b4f;
+    --header-bg: #1e1e1e;
+    --keyword-bg: #30363d;
+    --hover-bg: #282c34;
+    --shadow-color: rgba(0,0,0,0.4);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    overflow: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* --- Main App Layout --- */
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    background-color: var(--header-bg);
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row; /* Main axis is horizontal */
+    flex-grow: 1; /* Takes up remaining vertical space */
+    overflow: hidden; /* Prevents overflow at this level */
+    position: relative;
+}
+
+/* --- Form Container (Left Sidebar) --- */
+.form-container {
+    flex-basis: 380px; /* Fixed width */
+    flex-shrink: 0; /* Prevent from shrinking */
+    padding: 2rem;
+    background: var(--surface-color);
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto; /* Allow only this panel to scroll vertically */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* --- Main Content Area (Results, Insights, PDF) --- */
+.content-area {
+    flex-grow: 1; /* Takes up the rest of the horizontal space */
+    display: flex;
+    flex-direction: column; /* Organizes its children vertically */
+    padding: 1.5rem;
+    gap: 1.5rem;
+    overflow: hidden; /* Important for containing the grid */
+}
+
+.content-area-grid {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: minmax(350px, 1fr) minmax(350px, 1fr) 2fr; /* 3 flexible columns */
+    gap: 1.5rem;
+    overflow: hidden; /* Prevents grid children from overflowing */
+}
+
+/* --- Panel Styles --- */
+.panel {
+    background: var(--surface-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Crucial for preventing content spill */
+}
+
+.panel-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.2rem;
+    color: var(--text-color);
+    transition: color 0.3s, border-color 0.3s;
+    flex-shrink: 0; /* Header should not shrink */
+}
+
+.panel-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    overflow-y: auto; /* Content inside panels can scroll */
+    flex-grow: 1;
+}
+
+.results-list {
+    padding: 0; /* Reset padding for the list container */
+}
+
+/* --- Dark Mode Toggle --- */
+.toggle-container {
+    position: absolute;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    margin-left: 10px;
+}
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 26px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider { background-color: var(--primary-color); }
+input:checked + .slider:before { transform: translateX(24px); }
+
+
+/* --- Form & Input Styles --- */
+.form-container h2 { margin-top: 0; color: var(--primary-color); font-size: 1.5rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-color); }
+.form-group textarea, .form-group input[type="file"] { background-color: var(--background-color); color: var(--text-color); width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; box-sizing: border-box; font-size: 0.95rem; transition: all 0.2s; }
+.form-group textarea:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2); }
+button { background-color: var(--primary-color); color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 6px; cursor: pointer; font-size: 1.1rem; font-weight: 600; width: 100%; transition: background-color 0.2s, transform 0.1s; }
+button:hover { background-color: #005a9e; }
+button:active { transform: scale(0.98); }
+button:disabled { background-color: #a0c7e4; cursor: not-allowed; }
+
+/* --- Section & Insight Item Styles --- */
+.section-item { padding: 1rem 0; border-bottom: 1px solid var(--border-color); cursor: pointer; transition: background-color 0.2s; margin: 0 -1.5rem; padding-left: 1.5rem; padding-right: 1.5rem; }
+.section-item:hover { background-color: var(--hover-bg); }
+.section-item.active { background-color: var(--accent-color-light); border-left: 4px solid var(--primary-color); margin-left: -1.5rem; padding-left: calc(1.5rem - 4px); }
+.section-item h4 { margin: 0 0 0.5rem 0; color: var(--primary-color); font-size: 1rem; }
+.section-item p, .similar-item p, .insight-block p { margin: 0; font-size: 0.85rem; color: var(--subtle-text-color); transition: color 0.3s; }
+
+/* --- Insight Panel Specifics --- */
+.insight-block { margin-top: 1.5rem; }
+.insight-block h4 { color: var(--primary-color); margin-bottom: 0.5rem; }
+.keywords-container { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.keyword-tag { background-color: var(--keyword-bg); color: var(--text-color); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.85rem; transition: background-color 0.3s, color 0.3s; }
+.similar-btn { background-color: #27ae60; font-size: 1rem; font-weight: 500; }
+.similar-btn:hover { background-color: #229954; }
+.similar-item { background-color: var(--hover-bg); border-left: 3px solid #27ae60; padding: 0.75rem 1rem; border-radius: 4px; margin-bottom: 0.5rem; transition: background-color 0.3s; }
+.similar-item h5 { margin: 0 0 0.25rem 0; color: var(--text-color); }
+
+/* --- Helper Classes --- */
+.loading-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; z-index: 20; }
+.spinner { border: 5px solid #f3f3f3; border-top: 5px solid var(--primary-color); border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.error-message { background-color: #f8d7da; color: #721c24; padding: 1rem; border: 1px solid #f5c6cb; border-radius: 6px; margin-top: 1rem; }
+.empty-state { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; text-align: center; color: var(--subtle-text-color); }
+.empty-state-icon { font-size: 4rem; margin-bottom: 1rem; }

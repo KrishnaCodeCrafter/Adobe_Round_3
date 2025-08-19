@@ -1,0 +1,7 @@
+Flask
+Flask-Cors
+PyPDF2
+PyMuPDF
+pdfplumber
+sentence-transformers
+numpy

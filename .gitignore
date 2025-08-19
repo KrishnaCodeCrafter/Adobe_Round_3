@@ -1,0 +1,47 @@
+# Python / Backend
+# ----------------------------------------------------------------
+# Ignore the virtual environment folder
+venv/
+__pycache__/
+*.pyc
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
+
+# Node.js / Frontend
+# ----------------------------------------------------------------
+# Ignore the massive node_modules folder
+frontend/node_modules/
+
+# Ignore the production build folder
+frontend/build/
+
+# Ignore log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore local environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+# Project-Specific Files
+# ----------------------------------------------------------------
+# Ignore uploaded PDFs and generated output files
+uploads/
+output/
+
+# Ignore the downloaded SentenceTransformer model.
+# Large model files should generally not be committed to Git.
+# The script is designed to download it if it's not present.
+models/
+
+
+# General OS Files
+# ----------------------------------------------------------------
+.DS_Store
+Thumbs.db
