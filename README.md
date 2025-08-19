@@ -93,6 +93,8 @@ You can run this project either locally for development or using the provided Do
     ```
 4.  Access the application in your browser at `http://localhost:3000`.
 
+## 📸 Screenshot
+
 ## 🧠 How It Works
 
 ### Persona-Driven Ranking
