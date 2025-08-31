@@ -20,10 +20,6 @@ This project is an intelligent web application designed to analyze a collection 
 * **Layout-Aware Sectioning**: A smart algorithm that detects visual gaps in the document layout to accurately determine where sections begin and end, preventing unrelated content from being grouped together.
 * **Light & Dark Mode**: A sleek, modern interface with a user-toggleable dark mode for comfortable reading in any environment.
 
-## Getting Started
-
-You can run this project either locally for development or using the provided Docker container for a production-like setup.
-
 ### Prerequisites
 
 * Node.js and npm
